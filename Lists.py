@@ -58,15 +58,17 @@ list_cpy.insert(0,'Cucumber')
 print(list_cpy)
 print(list_org)
 
+# squared values from list
 xo_o = [1, 2, 3, 4, 5, 6]
+
+#iterrate through each value and each value is equal to x , then multiple within itself
 v = [x * x for x in xo_o]
 
 print(xo_o)
 print(v)
 
+# for loop to print the same squared values inside a print
+for i in range(3):
+    if i in xo_o:
+        print([x * x for x in xo_o])
 
-for i in range(2):
-    for x in xo_o:
-        xo_o * x
-        print(xo_o)
-        break
