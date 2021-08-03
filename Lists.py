@@ -77,14 +77,15 @@ existing = 'e'
 replace = '43'
 dsfsdf = 'testing'
 
-for x in range(1):
+for x in range(2):
     while existing in dsfsdf:
         for letters in dsfsdf:
             replace = dsfsdf.replace('e', '43')
             print(replace)
             break
-        print('done')
         break
+
+print('done')
 print(dsfsdf)
 
 # print(dsfsdf.replace('e', 'b'))
