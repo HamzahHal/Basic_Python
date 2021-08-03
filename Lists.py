@@ -73,12 +73,20 @@ for i in range(3):
         print([x * x for x in xo_o])
 
 
-range = ['test', 2 , 4, 23, 23932]
+existing = 'e'
+replace = '43'
+dsfsdf = 'testing'
 
-rangenew = range + range_list
+for x in range(1):
+    while existing in dsfsdf:
+        for letters in dsfsdf:
+            replace = dsfsdf.replace('e', '43')
+            print(replace)
+            break
+        print('done')
+        break
+print(dsfsdf)
 
-print(rangenew)
-print(range_list[:4])
-
+# print(dsfsdf.replace('e', 'b'))
 
 
