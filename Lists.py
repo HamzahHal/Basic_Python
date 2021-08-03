@@ -72,3 +72,13 @@ for i in range(3):
     if i in xo_o:
         print([x * x for x in xo_o])
 
+
+range = ['test', 2 , 4, 23, 23932]
+
+rangenew = range + range_list
+
+print(rangenew)
+print(range_list[:4])
+
+
+
