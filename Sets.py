@@ -75,3 +75,19 @@ another_set = set("HelloTester")
 
 for x in another_set:
     print(x)
+
+print(setA.issuperset(setB))
+
+
+setA_cpy = setA.copy()
+setA_cpy.add(29)
+print(setA_cpy)
+print(setA)
+
+
+a = frozenset([1, 2, 3, 4])
+b = {1,2,3,4,5,6,7,}
+
+a.union(b)
+
+print(a)
