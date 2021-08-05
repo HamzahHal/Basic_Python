@@ -1,0 +1,74 @@
+{
+  "name":"CPS List",
+  "description":"Allows creation of CPS model data",
+  "renders":[
+    "application/json"
+  ],
+  "parses":[
+    "application/json"
+  ],
+  "actions":{
+    "POST":{
+      "id":{
+        "type":"field",
+        "required":false,
+        "read_only":true,
+        "label":"Id"
+      },
+      "project_code":{
+        "type":"string",
+        "required":true,
+        "read_only":false,
+        "label":"Project code"
+      },
+      "cps_model_number":{
+        "type":"string",
+        "required":true,
+        "read_only":false,
+        "label":"CPS Model Number"
+      },
+      "pile_x":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Pile X"
+      },
+      "pile_y":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Pile Y"
+      },
+      "pile_z":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Pile Z"
+      },
+      "cable_mg_thickness":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Cable MG Thickness"
+      },
+      "cable_mg_width":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Cable MG Width"
+      },
+      "cable_mg_length":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Cable MG Length"
+      },
+      "cable_mg_volume":{
+        "type":"float",
+        "required":true,
+        "read_only":false,
+        "label":"Cable MG Volume"
+      }
+    }
+  }
+}

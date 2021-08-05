@@ -1,0 +1,12 @@
+{
+  "id": "58791d45aa40fa2508bccd57",
+  "project_code": "TEK-ABC123",
+  "cps_model_number": 1,
+  "pile_x": 50,
+  "pile_y": 75,
+  "pile_z": 12,
+  "cable_mg_thickness": 50,
+  "cable_mg_width": 20,
+  "cable_mg_length": 100,
+  "cable_mg_volume": 100000
+}

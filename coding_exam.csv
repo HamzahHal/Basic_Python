@@ -1,0 +1,5 @@
+Project Code,cps model number,pile_x,pile_y,pile_z,cable_mg_thickness,cable mg width,cable mg length
+ABC123,1,50,75,12,50,20,100
+DEF987-0,5,invalid,,50,27,50,35
+982,6,27,658,45,25,50,23
+1687-1,1,698,36,3645,,,
