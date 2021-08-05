@@ -90,4 +90,18 @@ print(dsfsdf)
 
 # print(dsfsdf.replace('e', 'b'))
 
+#cube = [int(numtest)] * 1
+#v = [x * x * x for x in cube]
+
+#print(numtest)
+#print(cube)
+#print(v)
+
+numtest = input('enter number to cube:')
+cubed = ""
+
+
+for x in range(1):
+         cubed = int(numtest)**3
+         print(cubed)
 
