@@ -25,9 +25,9 @@ else:
     print("no")
 
 
-odds = {1,3,5,7,9}
-evens = {2,4,6,8,10}
-primes = {2,3,5,7}
+odds = {1, 3, 5, 7, 9}
+evens = {2, 4, 6, 8, 10}
+primes = {2, 3, 5, 7}
 
 # joining 2 sets together
 u = odds.union(evens)
@@ -38,8 +38,8 @@ i = odds.intersection(primes)
 print(i)
 
 # finding the different between the 2 sets, basically the numbers that arent included in SetB that are in SetA
-setA = {1,2,3,4,5,6,7,8,9}
-setB = {1,2,3,10,11,12}
+setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+setB = {1, 2, 3, 10, 11, 12}
 
 diff = setA.difference(setB)
 print(diff)
@@ -52,11 +52,26 @@ print(diff2)
 setA.update(setB)
 print(setA)
 # updates elements by only showing elements found in both sets
-#setA.intersection_update(setB)
-#print(setA)
+# setA.intersection_update(setB)
+# print(setA)
 
 # this updates the set but only keeps the elements found in SetA and NOT SetB
 setA.difference_update(setB)
 print(setA)
 
 
+for i in setA:
+    print(i)
+
+# the for loop for sets only randomizes string values however , integers are printed in the order no matter the order of input into a set
+
+new_set = {5, 1, 2, 3, 4}
+
+for g in new_set:
+    print(g)
+
+# the for loop for sets only randomizes string values however , integers are printed in the order no matter the order of input into a set
+another_set = set("HelloTester")
+
+for x in another_set:
+    print(x)
