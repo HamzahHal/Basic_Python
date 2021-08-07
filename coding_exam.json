@@ -1,0 +1,42 @@
+[
+  {
+    "alProject Code": "ABC123",
+    "cps model number": 1,
+    "pile_x": 50,
+    "pile_y": 75,
+    "pile_z": 12,
+    "cable_mg_thickness": 50,
+    "cable mg width": 20,
+    "cable mg length": 100
+  },
+  {
+    "alProject Code": "DEF987-0",
+    "cps model number": 5,
+    "pile_x": "invalid",
+    "pile_y": "",
+    "pile_z": 50,
+    "cable_mg_thickness": 27,
+    "cable mg width": 50,
+    "cable mg length": 35
+  },
+  {
+    "alProject Code": 982,
+    "cps model number": 6,
+    "pile_x": 27,
+    "pile_y": 658,
+    "pile_z": 45,
+    "cable_mg_thickness": 25,
+    "cable mg width": 50,
+    "cable mg length": 23
+  },
+  {
+    "alProject Code": "1687-1",
+    "cps model number": 1,
+    "pile_x": 698,
+    "pile_y": 36,
+    "pile_z": 3645,
+    "cable_mg_thickness": "",
+    "cable mg width": "",
+    "cable mg length": ""
+  }
+]
