@@ -38,6 +38,14 @@ print(d['a'])
 print(d['b'])
 print(d['f'])
 
+c = deque()
 
-
+c.append(1)
+c.append(2)
+c.appendleft(3)
+c.popleft()
+c.pop()
+c.extend([4,5,6])
+c.rotate(-1)
+print(c)
 
