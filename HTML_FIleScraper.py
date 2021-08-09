@@ -12,6 +12,8 @@ with open('home.html', 'r') as html_file:
 
         print(f'{course_name} costs {course_price}')
 
+
+print("faoijfsaf")
     
 #    courses_html_tags = soup.find_all('h5')
 #    for course in courses_html_tags:
