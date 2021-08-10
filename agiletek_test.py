@@ -1,38 +1,71 @@
-import pandas as pd
-import json
 import csv
+import sys
+import json
+from collections import OrderedDict
 
 
-def read_data():
-    data_set = dict(pd.read_json("coding_exam.json"))
-    columns = data_set.keys()
-    rows = data_set.items()
-    new_type = (columns, rows)
-    return new_type
+def parseCSV(data):
+    types = ["str", "str", "float", "float", "float", "float", "float", "float", "float"]
+    keys = [k.replace(" ", "_").lower() for k in data[0]]
+    converted = []
+    for i in range(1, len(data)):
+        obj = OrderedDict()
+        for j in range(0, len(keys)):
+            try:
+                if len(data[i][j]) > 0:
+                    if types[j] == "float":
+                        obj[keys[j]] = float(data[i][j])
+                    else:
+                        obj[keys[j]] = data[i][j]
+                else:
+                    obj[keys[j]] = None
+            except:
+                obj[keys[j]] = None
+        converted.append(obj)
+    return converted
 
 
-def api():
-    dataset = pd.read_json('coding_exam.json')
-    new_data = {"Project Code": dataset.iloc[0, 1], "cps model number": dataset.iloc[1:4], "pile_x": dataset.iloc[2:4],
-                "pile_y": dataset.iloc[3:4], "pile_z": dataset.iloc[4:4], "cable_mg_thickness": dataset.iloc[5:4],
-                "cable mg width": dataset.iloc[6:4], "cable mg length": dataset.iloc[6:4]}
-
-    new_data = {k: None for k in new_data}
-    # df = pd.DataFrame(list(new_data.items()), columns=["Project Code", "cps model number",
-    #                                                   "pile_x", "pile_y",
-    #                                                   "pile_z", "cable_mg_thickness",
-    #                                                   "cable mg width", "cable mg length"])
-
-    # dictionary["Project Code"] = dataset.iloc[0, 0]
-    # dictionary["Project Code"] = dataset.iloc[0]
-
-    return new_data
+def createOutputJSON(data):
+    jsonfile = open("output.json", "w")
+    jsonfile.write(json.dumps(data, indent=4))
 
 
-print(read_data())
+def addVolume(data):
+    success = csv.writer(open("success.csv", "w"))
+    fail = csv.writer(open("fail.csv", "w"))
+    success.writerow(data[0].keys())
+    fail.writerow(data[0].keys())
 
-# with open('coding_exam.json','r') as f:
-# aList = json.dumps(dataset)
-# data = json.load()
-# data = json.loads(f.read())
-# df_nested_list = pd.json_normalize(data, record_path=["alProject Code"])
+    for i in range(len(data)):
+        data_values = data[i].values()
+        data[i]["project_code"] = "TEK-" + data[i]["project_code"]
+
+        if None in data_values:
+            fail.writerow(data_values)
+
+        else:
+            data[i]["cable_mg_volume"] = (
+                data[i]["cable_mg_thickness"] + data[i]["cable_mg_width"] + data[i]["cable_mg_length"]
+            )
+            success.writerow(data[i].values())
+
+    json.dump(data, open("output.json", "w"), indent=4)
+
+
+def main():
+    try:
+        filename = sys.argv[1]
+        file_format = filename.split(".")[-1].lower()
+        file = open(sys.argv[1])
+        if file_format == "csv":
+            res = parseCSV(list(csv.reader(file)))
+            createOutputJSON(res)
+            addVolume(json.load(open("output.json", "r")))
+        else:
+            exit()
+    except TypeError as e:
+        print(e)
+        print("You must provide a valid csv file")
+
+
+main()
